@@ -1,5 +1,5 @@
 [package]
-name = "cli"
+name = "wiki_corpus"
 edition = "2021"
 version.workspace = true
 authors.workspace = true
