@@ -1,7 +1,11 @@
 [package]
 name = "parser"
-version = "0.1.0"
 edition = "2021"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+
 
 [dependencies]
 anyhow = { workspace = true }
@@ -12,3 +16,6 @@ serde = { workspace = true }
 serde_json = { workspace = true }
 bzip2 = { version = "0.4.4", features = ["tokio"] }
 indicatif = { workspace = true }
+
+[package.metadata.release]
+release = false

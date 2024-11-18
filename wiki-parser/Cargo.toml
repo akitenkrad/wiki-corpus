@@ -1,10 +1,11 @@
 [package]
 name = "wiki_parser"
 edition = "2021"
-version.workspace = true
-authors.workspace = true
-repository.workspace = true
-license.workspace = true
+version = "1.0.0"
+authors = ["akitenkrad"]
+repository = "https://github.com/akitenkrad/wiki-corpus.git"
+license = "MIT"
+
 
 [dependencies]
 anyhow = { workspace = true }
@@ -15,3 +16,6 @@ thiserror = "2.0.3"
 [build-dependencies]
 parol = "1.0.2"
 parol_runtime = { version = "1.0.1", features = ["auto_generation"] }
+
+[package.metadata.release]
+release = false

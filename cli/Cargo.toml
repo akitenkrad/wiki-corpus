@@ -6,10 +6,15 @@ authors.workspace = true
 repository.workspace = true
 license.workspace = true
 
+
 [dependencies]
-clap = { version = "4.5.21", features = ["cargo", "derive", "unstable-doc"] }
 parser = { workspace = true }
+clap = { version = "4.5.21", features = ["cargo", "derive", "unstable-doc"] }
 
 [[bin]]
 name = "wiki-corpus"
 path = "src/main.rs"
+
+[package.metadata.release]
+tag = true
+tag-prefix = ""
