@@ -10,8 +10,8 @@ license = "MIT"
 description = "Extract text from Wikipedia dumps (.bz2) and convert it to JSONLines format."
 
 [workspace.dependencies]
-parser = { path = "parser" }
-wiki_parser = { path = "wiki-parser" }
+parser = { path = "parser", version = "1.0.0" }
+wiki_parser = { path = "wiki-parser", version = "1.0.0" }
 anyhow = ">=1.0.93"
 indicatif = ">=0.17.9"
 libm = ">=0.2.11"
