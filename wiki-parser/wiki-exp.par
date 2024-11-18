@@ -1,0 +1,43 @@
+%start Wiki
+%title "Wiki grammar"
+%line_comment "//"
+
+%scanner ForRawString {
+    %auto_newline_off
+}
+
+%%
+
+/*  0 */ Wiki: Value;
+/*  1 */ Link: LSquare String LinkList /* Vec */ RSquare;
+/*  2 */ LinkList /* Vec<T>::Push */: Pipe Value LinkList;
+/*  3 */ LinkList /* Vec<T>::New */: ;
+/*  4 */ Attribute: LCurly String AttributeList /* Vec */ RCurly;
+/*  5 */ AttributeList /* Vec<T>::Push */: Pipe Value AttributeList;
+/*  6 */ AttributeList /* Vec<T>::New */: ;
+/*  7 */ Attribute2: LCurlyPipe Attribute2List /* Vec */ RCurlyPipe;
+/*  8 */ Attribute2List /* Vec<T>::Push */: Attribute2ListGroup Attribute2List;
+/*  9 */ Attribute2ListGroup: RawString;
+/* 10 */ Attribute2ListGroup: Pipe;
+/* 11 */ Attribute2ListGroup: String;
+/* 12 */ Attribute2ListGroup: LCurly;
+/* 13 */ Attribute2ListGroup: RCurly;
+/* 14 */ Attribute2ListGroup: LSquare;
+/* 15 */ Attribute2ListGroup: RSquare;
+/* 16 */ Attribute2List /* Vec<T>::New */: ;
+/* 17 */ LCurlyPipe: '{|';
+/* 18 */ RCurlyPipe: '|}';
+/* 19 */ LSquare: '[[';
+/* 20 */ RSquare: ']]';
+/* 21 */ LCurly: '{{';
+/* 22 */ RCurly: '}}';
+/* 23 */ Pipe: '|';
+/* 24 */ RawString: <ForRawString>/[^(\|\})(\{\|)]*/;
+/* 25 */ String: /(\.|[^\[\]\{\}\|])*/;
+/* 26 */ Value: ValueList /* Vec */;
+/* 27 */ ValueList /* Vec<T>::Push */: ValueListGroup ValueList;
+/* 28 */ ValueListGroup: Link;
+/* 29 */ ValueListGroup: Attribute;
+/* 30 */ ValueListGroup: Attribute2;
+/* 31 */ ValueListGroup: String;
+/* 32 */ ValueList /* Vec<T>::New */: ;

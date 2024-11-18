@@ -1,0 +1,25 @@
+
+%start Wiki
+%title "Wiki grammar"
+%line_comment "//"
+
+%scanner ForRawString {
+    %auto_newline_off
+}
+
+%%
+
+Wiki: Value;
+Link: LSquare String { Pipe Value } RSquare;
+Attribute: LCurly String { Pipe Value } RCurly;
+Attribute2: LCurlyPipe { (RawString | Pipe | String | LCurly | RCurly | LSquare | RSquare) } RCurlyPipe;
+LCurlyPipe: '{|';
+RCurlyPipe: '|}';
+LSquare: '[[';
+RSquare: ']]';
+LCurly: '{{';
+RCurly: '}}';
+Pipe: '|';
+RawString: <ForRawString>/[^(\|\})(\{\|)]*/;
+String: /(\.|[^\[\]\{\}\|])*/;
+Value: { (Link | Attribute | Attribute2 | String) };

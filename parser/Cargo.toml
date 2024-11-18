@@ -1,0 +1,14 @@
+[package]
+name = "parser"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+quick-xml = ">=0.37.0"
+regex = { workspace = true }
+wiki_parser = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+bzip2 = { version = "0.4.4", features = ["tokio"] }
+indicatif = { workspace = true }

@@ -1,0 +1,17 @@
+[package]
+name = "wiki_parser"
+edition = "2021"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+regex = { workspace = true }
+parol_runtime = { version = "1.0.1", features = ["auto_generation"] }
+thiserror = "2.0.3"
+
+[build-dependencies]
+parol = "1.0.2"
+parol_runtime = { version = "1.0.1", features = ["auto_generation"] }
