@@ -81,7 +81,7 @@ pub fn parse_xml(input_filepath: String) -> Result<()> {
                         cleaned_text.push_str(line);
                     }
 
-                    match wiki_parser::analyze(cleaned_text) {
+                    match wiki_corpus_grammar::analyze(cleaned_text) {
                         Ok(cleaned_text) => {
                             if cleaned_text.is_empty() {
                                 continue;

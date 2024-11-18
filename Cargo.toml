@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["parser", "wiki-parser", "cli"]
+members = ["wiki-corpus-parser", "wiki-corpus-grammar", "cli"]
 
 [workspace.package]
 version = "1.0.0"
@@ -10,8 +10,8 @@ license = "MIT"
 description = "Extract text from Wikipedia dumps (.bz2) and convert it to JSONLines format."
 
 [workspace.dependencies]
-parser = { path = "parser", version = "1.0.0" }
-wiki_parser = { path = "wiki-parser", version = "1.0.0" }
+wiki_corpus_parser = { path = "./wiki-corpus-parser", version = "1.0.0" }
+wiki_corpus_grammar = { path = "./wiki-corpus-grammar", version = "1.0.0" }
 anyhow = ">=1.0.93"
 indicatif = ">=0.17.9"
 libm = ">=0.2.11"

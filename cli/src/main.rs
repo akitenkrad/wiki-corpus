@@ -1,6 +1,6 @@
 use clap::{crate_version, Parser};
-use parser::parse_xml;
 use std::path::PathBuf;
+use wiki_corpus_parser::parse_xml;
 
 #[derive(Parser)]
 #[command(version=crate_version!())]

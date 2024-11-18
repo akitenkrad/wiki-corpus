@@ -1,21 +1,22 @@
 [package]
-name = "parser"
+name = "wiki_corpus_parser"
 edition = "2021"
 version.workspace = true
 authors.workspace = true
 repository.workspace = true
 license.workspace = true
+description.workspace = true
 
 
 [dependencies]
+wiki_corpus_grammar = { workspace = true }
 anyhow = { workspace = true }
 quick-xml = ">=0.37.0"
 regex = { workspace = true }
-wiki_parser = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 bzip2 = { version = "0.4.4", features = ["tokio"] }
 indicatif = { workspace = true }
 
 [package.metadata.release]
-release = false
+tag = false

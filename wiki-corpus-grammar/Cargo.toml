@@ -1,10 +1,11 @@
 [package]
-name = "wiki_parser"
+name = "wiki_corpus_grammar"
 edition = "2021"
-version = "1.0.0"
-authors = ["akitenkrad"]
-repository = "https://github.com/akitenkrad/wiki-corpus.git"
-license = "MIT"
+version.workspace = true
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+description.workspace = true
 
 
 [dependencies]
@@ -18,4 +19,4 @@ parol = "1.0.2"
 parol_runtime = { version = "1.0.1", features = ["auto_generation"] }
 
 [package.metadata.release]
-release = false
+tag = false
