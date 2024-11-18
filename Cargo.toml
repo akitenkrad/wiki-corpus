@@ -7,6 +7,7 @@ version = "1.0.0"
 authors = ["akitenkrad"]
 repository = "https://github.com/akitenkrad/wiki-corpus.git"
 license = "MIT"
+description = "Extract text from Wikipedia dumps (.bz2) and convert it to JSONLines format."
 
 [workspace.dependencies]
 parser = { path = "parser" }
